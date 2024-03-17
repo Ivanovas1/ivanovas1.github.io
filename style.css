@@ -1,5 +1,5 @@
            
-          body{
+          body {
           background-color: white;
           background-size: cover;
           margin: 0px;
@@ -293,7 +293,7 @@
           background-color: rgba(0, 0, 0, 0.5);
           display: flex;
           justify-content: center;
-          align-items; center;
+          align-items: center;
         }
 
         .Reproductor iframe {
