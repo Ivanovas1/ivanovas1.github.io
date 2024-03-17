@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/home/aztlan/Escritorio/HojaEstiloa.css">
+    
+    <title>
+      el Diario de Iván
+    </title>
+</head>
+
+<body>
+  <div class="overlay">
+  </div>
+  <div class="hexagonos">
+    <table>
+      <tr>
+        <td>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="BGMainBar">
+    <header>
+      <nav>
+        <ul>
+          <li float="left">
+            <img id="logogirando" src="Sintitulo-1.png"></img>
+          </li>
+          <li class="ListaReloj">
+            <div id="reloj">
+            </div>
+          </li>
+          <li class="Saludos">
+            <p id="Saludos"></p>
+          </li>
+          <li id="botoncelda">
+            <button onclick="toggleTheme()" class="theme-button">
+              <img id="solicono" src="sun_12551992.png"></img>
+
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <script id="Reloj">
+        function actualizarReloj() {
+          // Obtener la hora actual
+          var fecha = new Date();
+          var horas = fecha.getHours();
+          var minutos = fecha.getMinutes();
+          var segundos = fecha.getSeconds();
+          let saludoMadrugada = '¿Desvelandote?';
+          let saludoMañana = '¡Buen día! No te olvides de desayunar.';
+          let saludoMedioDia = '¿Ya tan rápido es medio día?';
+          let restoDelDia = '¡Hola! ¿Cómo va tu día?';
+
+          // Formatear la hora para que tenga dos dígitos siempre
+          horas = horas < 10 ? '0' + horas : horas;
+          minutos = minutos < 10 ? '0' + minutos : minutos;
+          segundos = segundos < 10 ? '0' + segundos : segundos;
+
+          // Construir la cadena de tiempo
+          var horaActual = '<strong>' + horas + ':' + minutos + ':' + segundos + '</strong>';
+
+          // Actualizar el contenido del elemento con el ID 'reloj'
+          document.getElementById('reloj').innerHTML = horaActual;
+
+          // Determinar el saludo basado en la hora
+          if (horas < 7) {
+            document.getElementById('Saludos').innerHTML = saludoMadrugada;
+          } else if (horas < 12) {
+            document.getElementById('Saludos').innerHTML = saludoMañana;
+          } else if (horas === 12) {
+            document.getElementById('Saludos').innerHTML = saludoMedioDia;
+          } else {
+            document.getElementById('Saludos').innerHTML = restoDelDia;
+          }
+        }
+
+        // Actualizar el reloj cada segundo
+        setInterval(actualizarReloj, 1000);
+
+        // Llamar a la función por primera vez para evitar un retraso inicial
+        actualizarReloj();
+      </script>
+    </header>
+
+  </div>
+  <div class="Contenido">
+    <div class="MainPageTitleContainer">
+      <div class="TextoParrafo1">
+        <p>
+          <span id="Blanco">
+            <b>
+              El Abedúl
+            </b>
+          </span>
+          <i>
+            (Birch Tree - Foals)
+          </i>
+        </p>
+        <p class="FooterBox">
+          <i>
+            ¿Alguna vez te has reunido con viejos amigos para hablar de lo rapido que pasa el tiempo, lo dificil de
+            crecer y lo maravilloso de poderse reencontrar?
+          </i>
+        </p>
+      </div>
+    </div>
+    <div class="MainText">
+      <p>
+        <span id="Blanco">
+          <i>"Las viejas memorias, los viejos amigos, aquel amor inolvidable..."</i>
+        </span>
+
+        <br><br>
+
+        Tarde o temprano en nuestras vidas pasaremos por esa nostalgia. Pero mas importante aun: Nos enfrentaremos a una
+        de las tantas realidades de la vida: El Tiempo se va para jamas volver.
+
+        <br></br>
+
+        <span id="Blanco">
+          <i>
+            <b>
+              Birch Tree
+            </b>
+          </i>
+        </span>
+        es lo que es, un pinche rolon que apela a tus recuerdos una y otra vez para dejarte en claro que cada dia te
+        haces mas viejo, cada dia eres mas nostalgico
+        <span id="Blanco">
+          <i>
+            <u>
+              ...y muy posiblemente no seas siquiera el adulto funcional y maduro que deberias ser...
+            </u>
+          </i>
+        </span>
+        <br><br>
+        Pocos aguacates mas duros que ese pensamiento han llegado a mi vida.
+        <br>
+        Afortunadamente esta pieza músical te revela
+        <span id="Blanco">
+          <i>
+            <b>
+              una gran verdad...
+            </b>
+          </i>
+        </span>
+        en la vida de todo ser humano.
+      </p>
+
+    </div>
+      <div class="Reproductor">
+        <iframe src="https://www.youtube.com/embed/pFkGvVFdx-o?list=RDpFkGvVFdx-o"
+          title="FOALS - Birch Tree [Official Music Video]" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+
+
+  </div>
+
+</body>
+
+</html>
